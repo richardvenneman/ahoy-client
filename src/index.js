@@ -1,7 +1,13 @@
+import defaultConfig from './config';
+
 /**
  * @param {Type}
  * @return {Type}
  */
-export default function () {
-  return true
+class Ahoy {
+  constructor(config) {
+    this.config = Object.assign(defaultConfig, config);
+  }
 }
+
+export default Ahoy;
