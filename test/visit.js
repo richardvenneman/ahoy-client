@@ -1,3 +1,5 @@
+/* eslint-disable no-new */
+
 import test from 'tape';
 import Cookies from 'js-cookie';
 import sinon from 'sinon';
@@ -13,7 +15,7 @@ test('Removes ahoy_track cookie when initializing', (t) => {
 
   t.notEqual(Cookies.get('ahoy_track'), undefined);
 
-  const visit = new Visit(config);
+  new Visit(config);
 
   t.equal(Cookies.get('ahoy_track'), undefined);
 });
@@ -21,7 +23,7 @@ test('Removes ahoy_track cookie when initializing', (t) => {
 test('Sets visit and visitor cookies', (t) => {
   t.plan(2);
 
-  const visit = new Visit(config);
+  new Visit(config);
 
   t.notEqual(Cookies.get('ahoy_visit'), undefined);
   t.notEqual(Cookies.get('ahoy_visitor'), undefined);
@@ -31,9 +33,9 @@ test('POSTs the visit to the backend', (t) => {
   t.plan(3);
 
   const requests = [];
-  xhr.onCreate = function(req) { requests.push(req); };
+  xhr.onCreate = function onCreate(req) { requests.push(req); };
 
-  const visit = new Visit(config);
+  new Visit(config);
 
   t.equal(requests.length, 1);
   t.equal('test-token', requests[0].requestHeaders['X-CSRF-Token']);
