@@ -1,4 +1,5 @@
 import defaultConfig from './config';
+import Visit from './visit';
 
 /**
  * @param {Type}
@@ -7,6 +8,7 @@ import defaultConfig from './config';
 class Ahoy {
   constructor(config) {
     this.config = Object.assign(defaultConfig, config);
+    this.visit = new Visit(this.config);
   }
 }
 

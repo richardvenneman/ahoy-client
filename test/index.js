@@ -18,3 +18,11 @@ test('client allows overriding config in constructor', (t) => {
 
   t.equal(client.config.cookieDomain, domain, 'overrides default cookieDomain');
 });
+
+test('client instantiates visit', (t) => {
+  t.plan(1);
+
+  const client = new Ahoy();
+
+  t.notEqual('undefined', client.visit);
+});
