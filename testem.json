@@ -1,9 +1,0 @@
-{
-  "src_files": [
-    "src/*.js"
-  ],
-  "test_page": "test/index.html",
-  "before_tests": "browserify -t babelify test/*.js -o test/support/bundle.js",
-  "on_exit": "rm test/support/bundle.js",
-  "launch_in_dev": ["Safari"]
-}
