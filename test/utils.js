@@ -6,6 +6,6 @@ test('generateId returns uuid string', (t) => {
 
   const uuid = generateId();
 
-  t.equal('string', typeof uuid);
-  t.notEqual(uuid, generateId());
+  t.equal(typeof uuid, 'string');
+  t.notEqual(generateId(), uuid);
 });

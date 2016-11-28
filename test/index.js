@@ -7,7 +7,7 @@ test('ahoy client exposes config', (t) => {
 
   const client = new Ahoy();
 
-  t.deepEqual(config, client.config, 'client exposes config');
+  t.deepEqual(client.config, config, 'client exposes config');
 });
 
 test('client allows overriding config in constructor', (t) => {
@@ -24,5 +24,5 @@ test('client instantiates visit', (t) => {
 
   const client = new Ahoy();
 
-  t.notEqual('undefined', client.visit);
+  t.notEqual(client.visit, 'undefined', 'visit should not be undefined');
 });

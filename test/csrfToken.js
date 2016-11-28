@@ -9,5 +9,5 @@ test('Returns token from meta tag', (t) => {
   elem.content = 'test-token';
   document.head.appendChild(elem);
 
-  t.equal('test-token', csrfToken());
+  t.equal(csrfToken(), 'test-token');
 });
