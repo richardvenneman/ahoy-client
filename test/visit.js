@@ -4,6 +4,8 @@ import sinon from 'sinon';
 import Visit from '../src/visit';
 import config from '../src/config';
 
+const xhr = sinon.useFakeXMLHttpRequest();
+
 test('Removes ahoy_track cookie when initializing', (t) => {
   t.plan(2);
 
@@ -28,7 +30,6 @@ test('Sets visit and visitor cookies', (t) => {
 test('POSTs the visit to the backend', (t) => {
   t.plan(3);
 
-  const xhr = sinon.useFakeXMLHttpRequest();
   const requests = [];
   xhr.onCreate = function(req) { requests.push(req); };
 
