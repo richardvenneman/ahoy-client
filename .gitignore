@@ -6,3 +6,5 @@ dist
 tmp
 coverage
 npm-debug.log
+
+test/support/bundle.js
