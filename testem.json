@@ -1,18 +1,9 @@
 {
-  "launchers": {
-    "Node": {
-      "command": "babel-tape-runner test/*.js",
-      "protocol": "tap"
-    }
-  },
-  "framework": "tap",
   "src_files": [
-    "test/index.js"
+    "src/*.js"
   ],
-  "serve_files": [
-    "test/bundle.js"
-  ],
-  "before_tests": "browserify -t babelify test/*.js -o test/bundle.js",
-  "after_tests": "rm test/bundle.js",
-  "launch_in_dev": ["Node", "PhantomJS"]
+  "test_page": "test/index.html",
+  "before_tests": "browserify -t babelify test/*.js -o test/support/bundle.js",
+  "on_exit": "rm test/support/bundle.js",
+  "launch_in_dev": ["Safari"]
 }
