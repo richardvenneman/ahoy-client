@@ -57,12 +57,14 @@
     "eslint-plugin-import": "^2.2.0",
     "isparta": "^4.0.0",
     "rimraf": "^2.4.2",
+    "sinon": "^1.17.6",
     "tap-spec": "^4.1.1",
     "tape": "^4.2.2",
     "testem": "^1.13.0",
     "watch": "^0.16.0"
   },
   "dependencies": {
-    "js-cookie": "^2.1.3"
+    "js-cookie": "^2.1.3",
+    "superagent": "^3.0.0"
   }
 }
